@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label>Here are your chosen excels:</Label>
+        <ListBox Grid.Row="1" x:Name="lstNames" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
+
+            <Button x:Name="btnAdd" Margin="0,5,288,0"  Click="ButtonAddName_Click" Content="添加表格文件" Height="38"/>
+            <Label Content="根据姓名统计某位老师的工作量(请输入老师姓名)："/>
+            <TextBox x:Name="teacherName" />
+            <Button x:Name="btnCountTeacher" Margin="0,5,288,0"  Click="ButtonCountTeacher_Click" Content="计算" Height="34" RenderTransformOrigin="1.045,0.534"/>
+            <Label Content="统计所有老师的工作量，并生成工作总量报表"/>
+            <Button x:Name="btnCountAllTeachers" Margin="0,5,288,0"  Click="ButtonCountAllTeachers_Click" Content="统计并生成汇总表" Height="34" RenderTransformOrigin="1.045,0.534"/>
+            <Label Content="合并功能（此时选择的文件为需要合并的文件）："/>
+            <Label Content="合并功能(请输入正确名字)："/>
+            <TextBox x:Name="rightName" />
+            <Button x:Name="btnMerge" Margin="0,5,288,0"  Click="ButtonMerge_Click" Content="合并" Height="34" RenderTransformOrigin="1.045,0.534"/>
+            <Label Content="将选中的表格文件转存到数据库"/>
+            <Button x:Name="btnSaveSQL" Margin="0,5,288,0"  Click="ButtonSaveSQL_Click" Content="转存到数据库" Height="34" RenderTransformOrigin="1.045,0.534"/>
+        </StackPanel>
+    </Grid>
+</Window>
